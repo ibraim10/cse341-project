@@ -1,0 +1,34 @@
+{
+    "name": "cse341-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "nodemon server.js",
+        "start": "node server.js",
+        "lint": "eslint server.js"
+    },
+    "author": "Ibraim Calvo",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "dotenv": "^16.0.2",
+        "express": "^4.18.1",
+        "mongodb": "^4.10.0",
+        "mongoose": "^6.6.2",
+        "swagger-ui-express": "^4.5.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.24.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.6.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.31.8",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "nodemon": "^2.0.20",
+        "prettier": "^2.7.1",
+        "swagger-autogen": "^2.22.0"
+    }
+}

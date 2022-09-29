@@ -1,0 +1,26 @@
+{
+    "user1": {
+        "firstName": "Ibraim",
+        "lastName": "Calvo",
+        "email": "ibra@gmail.com",
+        "password": "12345678"
+    },
+    "user2": {
+        "firstName": "Alex",
+        "lastName": "limb",
+        "email": "alex@gmail.com",
+        "password": "12345678"
+    },
+    "user3": {
+        "firstName": "Zoe",
+        "lastName": "Hathaway",
+        "email": "zoe@gmail.com",
+        "password": "12345678"
+    },
+    "user4": {
+        "firstName": "Bella",
+        "lastName": "Daddario",
+        "email": "bella@gmail.com",
+        "password": "12345678"
+    }
+}
