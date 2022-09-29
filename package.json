@@ -6,7 +6,8 @@
     "scripts": {
         "test": "nodemon server.js",
         "start": "node server.js",
-        "lint": "eslint server.js"
+        "lint": "eslint server.js",
+        "swagger": "node ./swagger.js"
     },
     "author": "Ibraim Calvo",
     "license": "MIT",
