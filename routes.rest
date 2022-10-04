@@ -6,10 +6,10 @@ POST  http://localhost:3000/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Jeff",
-    "lastName": "Bezos",
-    "email": "jeff@gmail.com",
-    "password": "12345678"
+    "firstName": "Cooper",
+    "lastName": "Kupp",
+    "email": "kupp@gmail.com",
+    "password": "Kupp10copper"
 }
 ###
 PUT  http://localhost:3000/users/6333ca1854f8ad0ef17c1de1
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:3000/users/6333ca1854f8ad0ef17c1de3
+DELETE  http://localhost:3000/users/633bb164627e451a66048309
 
 // PRODUCTION Deploy 
 ###
