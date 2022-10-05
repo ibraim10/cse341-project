@@ -1,7 +1,7 @@
 const { check } = require('express-validator');
 const { validateResult } = require('../helpers/validateHelper');
 
-const validateAddUser = [
+const validateAddAndUpdate = [
     check('firstName', 'Name is requied').exists().not().isEmpty(),
     check('lastName', 'Name is requied').exists().not().isEmpty(),
     check('email', 'Please include a valid email')
@@ -28,4 +28,4 @@ const validateAddUser = [
     },
 ];
 
-module.exports = { validateAddUser };
+module.exports = { validateAddAndUpdate };

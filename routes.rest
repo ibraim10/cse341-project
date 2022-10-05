@@ -12,43 +12,43 @@ Content-Type: application/json
     "password": "Kupp10copper"
 }
 ###
-PUT  http://localhost:3000/users/6333ca1854f8ad0ef17c1de1
+PUT  http://localhost:3000/users/633cea619475ad3f03ca2091
 Content-Type: application/json
 
 {
-    "firstName": "Beth",
-    "lastName": "Harmon",
-    "email": "beth@gmail.com",
-    "password": "12345678"
+    "firstName": "Troy",
+    "lastName": "Bolton",
+    "email": "troy@gmail.com",
+    "password": "Troy1022"
 }
 
 ###
-DELETE  http://localhost:3000/users/633bb164627e451a66048309
+DELETE  http://localhost:3000/users/633cea619475ad3f03ca2091
 
 // PRODUCTION Deploy 
 ###
 GET https://cse341-project-b0xp.onrender.com/users
 ###
-GET https://cse341-project-b0xp.onrender.com/users/6335080c258c202b97537e31
+GET https://cse341-project-b0xp.onrender.com/users/633bb262efc8b83678a89893
 ###
 POST  https://cse341-project-b0xp.onrender.com/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "bla",
-    "lastName": "bla",
-    "email": "jeff@gmail.com",
-    "password": "12345678"
+    "firstName": "Cooper",
+    "lastName": "Kupp",
+    "email": "kupp@gmail.com",
+    "password": "Kupp10copper"
 }
 ###
 PUT  https://cse341-project-b0xp.onrender.com/users/6335080c258c202b97537e31
 Content-Type: application/json
 
 {
-    "firstName": "Beth",
-    "lastName": "Harmon",
-    "email": "beth@gmail.com",
-    "password": "12345678"
+    "firstName": "Trayce",
+    "lastName": "Bolton",
+    "email": "trey@gmail.com",
+    "password": "Troy1022"
 }
 
 ###
