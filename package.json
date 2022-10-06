@@ -18,11 +18,12 @@
         "dotenv": "^16.0.2",
         "express": "^4.18.1",
         "express-promise-router": "^4.1.1",
+        "express-session": "^1.17.3",
         "express-validator": "^6.14.2",
         "mongodb": "^4.10.0",
         "mongoose": "^6.6.2",
         "passport": "^0.6.0",
-        "passport-google-oauth20": "^2.0.0",
+        "passport-google-oauth2": "^0.2.0",
         "swagger-ui-express": "^4.5.0"
     },
     "devDependencies": {
