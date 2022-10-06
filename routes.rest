@@ -41,7 +41,7 @@ Content-Type: application/json
     "password": "Kupp10copper"
 }
 ###
-PUT  https://cse341-project-b0xp.onrender.com/users/6335080c258c202b97537e31
+PUT  https://cse341-project-b0xp.onrender.com/users/633cbb845e592efcab15889b
 Content-Type: application/json
 
 {
@@ -52,5 +52,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE  https://cse341-project-b0xp.onrender.com/users/6335080c258c202b97537e31
+DELETE  https://cse341-project-b0xp.onrender.com/users/633cf05591d8456387b3183e
 
