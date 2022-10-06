@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const cookieSession = require('cookie-session');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const dbConnection = require('./db/connection');
 const router = require('./routes');
+const passportSetUp = require('./passport/passportSetUp.js');
 
 dbConnection();
 const app = express();
@@ -26,6 +28,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
 
+// Cookies
+app.use(
+    cookieSession({
+        name: 'session',
+        keys: ['key1', 'key2'],
+    }),
+);
+
+// Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
