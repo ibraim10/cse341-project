@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const Model = require('../db/model');
+const Model = require('../models/users');
 
 const getAllUsers = async (req, res) => {
     const users = await Model.find();

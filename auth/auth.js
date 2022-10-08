@@ -1,33 +1,47 @@
-const passport = require('passport');
-const dotenv = require('dotenv');
-const GoogleStrategy = require('passport-google-oauth2').Strategy;
-const User = require('../db/model');
-
-dotenv.config();
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const mongoose = require('mongoose');
+const User = require('../models/users');
 
 const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
 
-passport.use(
-    new GoogleStrategy(
-        {
-            clientID: GOOGLE_CLIENT_ID,
-            clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: 'http://localhost:3000/google/callback',
-            passReqToCallback: true,
-        },
-        function (request, accessToken, refreshToken, profile, done) {
-            // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-            //     return done(err, user);
-            // });
-            console.log('Passport callback function');
-            console.log(profile);
-        },
-    ),
-);
+module.exports = function (passport) {
+    passport.use(
+        new GoogleStrategy(
+            {
+                clientID: GOOGLE_CLIENT_ID,
+                clientSecret: GOOGLE_CLIENT_SECRET,
+                callbackURL: '/auth/google/callback',
+            },
+            async (accessToken, refreshToken, profile, done) => {
+                const newUser = {
+                    googleId: profile.id,
+                    displayName: profile.displayName,
+                    firstName: profile.name.givenName,
+                    lastName: profile.name.familyName,
+                    image: profile.photos[0].value,
+                };
 
-passport.serializeUser(function (user, done) {
-    done(null, user);
-});
-passport.deserializeUser(function (user, done) {
-    done(null, user);
-});
+                try {
+                    let user = await User.findOne({ googleId: profile.id });
+
+                    if (user) {
+                        done(null, user);
+                    } else {
+                        user = await User.create(newUser);
+                        done(null, user);
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            },
+        ),
+    );
+
+    passport.serializeUser((user, done) => {
+        done(null, user.id);
+    });
+
+    passport.deserializeUser((id, done) => {
+        User.findById(id, (err, user) => done(err, user));
+    });
+};
