@@ -23,8 +23,13 @@ const port = process.env.PORT || 3000;
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
+// Handlebars from helpers
+const { formatDate } = require('./helpers/hbs');
 // set up view engine
-app.engine('.hbs', engine({ defaultLayout: 'main', extname: '.hbs' }));
+app.engine(
+    '.hbs',
+    engine({ helpers: { formatDate }, defaultLayout: 'main', extname: '.hbs' }),
+);
 app.set('view engine', '.hbs');
 
 // Session

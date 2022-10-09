@@ -30,7 +30,7 @@ router.get('/', ensureAuth, async (req, res) => {
             .sort({ createdAt: 'desc' })
             .lean();
 
-        res.render('stories/index', {
+        res.render('posts/index', {
             posts,
         });
     } catch (err) {
