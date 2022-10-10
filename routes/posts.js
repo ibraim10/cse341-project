@@ -74,7 +74,8 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
             return res.render('error/404');
         }
 
-        if (post.user !== req.user.id) {
+        // eslint-disable-next-line eqeqeq
+        if (post.user != req.user.id) {
             res.redirect('/posts');
         } else {
             res.render('posts/edit', {
@@ -87,7 +88,7 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
     }
 });
 
-// Update story
+// Update post
 // eslint-disable-next-line consistent-return
 router.put('/:id', ensureAuth, async (req, res) => {
     try {
@@ -97,7 +98,8 @@ router.put('/:id', ensureAuth, async (req, res) => {
             return res.render('error/404');
         }
 
-        if (post.user !== req.user.id) {
+        // eslint-disable-next-line eqeqeq
+        if (post.user != req.user.id) {
             res.redirect('/posts');
         } else {
             post = await Post.findOneAndUpdate(
@@ -117,7 +119,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
     }
 });
 
-// Delete story
+// Delete post
 // eslint-disable-next-line consistent-return
 router.delete('/:id', ensureAuth, async (req, res) => {
     try {
@@ -127,7 +129,8 @@ router.delete('/:id', ensureAuth, async (req, res) => {
             return res.render('error/404');
         }
 
-        if (post.user !== req.user.id) {
+        // eslint-disable-next-line eqeqeq
+        if (post.user != req.user.id) {
             res.redirect('/posts');
         } else {
             await Post.remove({ _id: req.params.id });
@@ -139,10 +142,10 @@ router.delete('/:id', ensureAuth, async (req, res) => {
     }
 });
 
-// User stories
+// user posts
 router.get('/user/:userId', ensureAuth, async (req, res) => {
     try {
-        const posts = await Post.find({
+        const post = await Post.find({
             user: req.params.userId,
             status: 'public',
         })
@@ -150,7 +153,7 @@ router.get('/user/:userId', ensureAuth, async (req, res) => {
             .lean();
 
         res.render('posts/index', {
-            posts,
+            post,
         });
     } catch (err) {
         console.error(err);
