@@ -5,9 +5,9 @@
         "description": "Is an API of Users",
         "version": "1.0.0"
     },
-    "host": "localhost:3000",
+    "host": "cse341-project-b0xp.onrender.com",
     "basePath": "/",
-    "schemes": ["http"],
+    "schemes": ["https"],
     "paths": {
         "/": {
             "get": {
