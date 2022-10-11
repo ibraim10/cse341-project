@@ -5,13 +5,27 @@
         "description": "Is an API of Users",
         "version": "1.0.0"
     },
-    "host": "cse341-project-b0xp.onrender.com",
+    "host": "localhost:3000",
     "basePath": "/",
-    "schemes": ["https"],
+    "schemes": ["http"],
     "paths": {
+        "/": {
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/dashboard": {
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
         "/users/": {
             "get": {
-                "description": "It takes all users",
+                "description": "",
                 "produces": ["application/json"],
                 "parameters": [],
                 "responses": {
@@ -21,30 +35,8 @@
                 }
             },
             "post": {
-                "description": "You can add a user",
-                "parameters": [
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "firstName": {
-                                    "example": "any"
-                                },
-                                "lastName": {
-                                    "example": "any"
-                                },
-                                "email": {
-                                    "example": "any"
-                                },
-                                "password": {
-                                    "example": "any"
-                                }
-                            }
-                        }
-                    }
-                ],
+                "description": "",
+                "parameters": [],
                 "responses": {
                     "201": {
                         "description": "Created"
@@ -54,7 +46,7 @@
         },
         "/users/{id}": {
             "get": {
-                "description": "It takes only one user",
+                "description": "",
                 "produces": ["application/json"],
                 "parameters": [
                     {
@@ -71,34 +63,13 @@
                 }
             },
             "put": {
-                "description": "You can update a user",
+                "description": "",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
                         "required": true,
                         "type": "string"
-                    },
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "firstName": {
-                                    "example": "any"
-                                },
-                                "lastName": {
-                                    "example": "any"
-                                },
-                                "email": {
-                                    "example": "any"
-                                },
-                                "password": {
-                                    "example": "any"
-                                }
-                            }
-                        }
                     }
                 ],
                 "responses": {
@@ -108,7 +79,7 @@
                 }
             },
             "delete": {
-                "description": "You can delete a contact",
+                "description": "",
                 "parameters": [
                     {
                         "name": "id",
@@ -122,6 +93,125 @@
                         "description": "OK"
                     }
                 }
+            }
+        },
+        "/auth/google": {
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/auth/google/callback": {
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/auth/logout": {
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/posts/add": {
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/posts/": {
+            "post": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "user": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "get": {
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/posts/{id}": {
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            },
+            "delete": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/posts/edit/{id}": {
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/posts/user/{userId}": {
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
             }
         }
     }
